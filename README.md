@@ -3,7 +3,7 @@
 `dotnet new` templates for Visual Basic projects, from yours truly.
 
 ```bash
-dotnet new install DualBrain.Templates::*-*     # while the package is a preview
+dotnet new install DualBrain.Templates
 dotnet new list qb
 ```
 
@@ -21,7 +21,7 @@ dotnet new qb-text -n Hello
 dotnet run --project Hello
 ```
 
-Each template pins the QB.Compatibility version it was made for.
+The templates reference the newest stable QB.Compatibility when a project is restored, so a new library release needs no new version of the templates.
 
 ## Building and testing
 
@@ -30,4 +30,4 @@ dotnet pack -c Release -o artifacts
 ./test-templates.sh artifacts         # installs the package in a scratch location, creates each template and builds it
 ```
 
-Pushing a tag such as `v0.1.0-preview.1` publishes the package to nuget.org (trusted publishing; see `.github/workflows/release.yml`).
+Pushing a tag such as `v0.1.1` publishes the package to nuget.org (trusted publishing; see `.github/workflows/release.yml`).

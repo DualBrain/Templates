@@ -4,7 +4,7 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageId>DualBrain.Templates</PackageId>
-    <Version>0.1.0-preview.1</Version>
+    <Version>0.1.1</Version>
     <Title>DualBrain templates</Title>
     <Description>dotnet new templates for Visual Basic projects: programs that use QB.Compatibility, and more to come.</Description>
     <Authors>Cory Smith</Authors>
