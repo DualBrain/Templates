@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  templates:
+    name: Pack and build the templates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Pack
+        run: dotnet pack -c Release -o artifacts
+      - name: Create each template and build it
+        run: ./test-templates.sh artifacts

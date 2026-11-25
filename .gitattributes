@@ -1,0 +1,5 @@
+# Normalize line endings in text files.
+* text=auto eol=lf
+
+*.png binary
+*.ico binary

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace></RootNamespace>
+    <StartupObject>Program</StartupObject>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionInfer>On</OptionInfer>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <!-- Change OutputType to WinExe to show the program's text screen in a window instead of the terminal. -->
+  <PropertyGroup Condition="'$(OutputType)' == 'WinExe'">
+    <DefineConstants>QB_WINDOW</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="System.Math" />
+    <Import Include="QB" />
+    <Import Include="QB.Core" />
+    <Import Include="QB.Development" />
+    <Import Include="QB.Devices" />
+    <Import Include="QB.Events" />
+    <Import Include="QB.File" />
+    <Import Include="QB.Multimedia" />
+    <Import Include="QB.Printer" />
+    <Import Include="QB.Video" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="QB.Compatibility" Version="0.1.0-preview.1" />
+    <PackageReference Include="QB.Compatibility.Sdl" Version="0.1.0-preview.1" Condition="'$(OutputType)' == 'WinExe'" />
+  </ItemGroup>
+</Project>
