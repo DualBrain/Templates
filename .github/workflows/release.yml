@@ -23,7 +23,7 @@ jobs:
       - name: Pack
         run: dotnet pack -c Release -p:Version="${GITHUB_REF_NAME#v}" -o artifacts
       - name: Create each template and build it
-        run: ./test-templates.sh artifacts
+        run: bash ./test-templates.sh artifacts
       - uses: actions/upload-artifact@v4
         with:
           name: packages

@@ -17,4 +17,4 @@ jobs:
       - name: Pack
         run: dotnet pack -c Release -o artifacts
       - name: Create each template and build it
-        run: ./test-templates.sh artifacts
+        run: bash ./test-templates.sh artifacts
